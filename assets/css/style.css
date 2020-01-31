@@ -1,0 +1,15 @@
+#formDiv{
+border-style: solid;
+border-width: 2px;
+border-color: dodgerblue;
+}
+#tableDiv{
+    border-style: solid;
+border-width: 2px;
+border-color: dodgerblue;
+}
+.navbar{
+    position: relative;
+   margin-top: 0px;
+  bottom: 60px;
+}

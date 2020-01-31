@@ -1,28 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <!--the jquery link-->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     <!-- Moment.js Reference -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-   <!-- Firebase References -->
-   <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
-   <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
-   <!--the javascript link-->
-   <script src="assets/javascript/app.js"></script>
-   <!--the bootstrap link-->
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-   <!--the reset css link-->
-   <link rel="stylesheet" href="assets/css/reset.css">
-   <!--the css link-->
-   <link rel="stylesheet" href="assets/css/style.css">
+    <!--the jquery link-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Moment.js Reference -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <!-- Firebase References -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <!--the javascript link-->
+    <script src="assets/javascript/app.js"></script>
+    <!--the bootstrap link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--the reset css link-->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <!--the css link-->
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Train Scheduler</title>
 </head>
+
 <body>
-    
+    <!--bootstrap jumbotron-->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Train Scheduler</h1>
+            <p class="lead">Anytime is Train Time</p>
+        </div>
+    </div>
+
+
+    <div id="tableDiv" class="jumbotron">
+          <!--the blue bar at the top of the divs-->
+        <nav class="navbar navbar-light bg-primary">
+            <span class="navbar-brand mb-0 h1">Current Train Scheduler</span>
+        </nav>
+        <table class="table">
+            <tr>
+                <td>Train Name</td>
+                <td>Destination</td>
+                <td>Frequency (min)</td>
+                <td>Next Arrival</td>
+                <td>Minutes Away</td>
+            </tr>
+        </table>
+
+    </div>
+
+
+
+
+
+
+    <!--the input group-->
+    <div id="formDiv" class="jumbotron">
+        <!--the blue bar at the top of the divs-->
+        <nav class="navbar navbar-light bg-primary">
+            <span class="navbar-brand mb-0 h1">Add Train</span>
+        </nav>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Train Name</label>
+                <input type="text" class="form-control input1" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Destination</label>
+                <input type="text" class="form-control input2">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Frist Train Time (HH:mm - military time)</label>
+                <input type="text" placeholder="HH:mm - military time" class="form-control input3">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Frequency (min)</label>
+                <input type="text" class="form-control input4">
+            </div>
+            <button id="button" class="btn btn-primary">Add Train</button>
+
+        </form>
+    </div>
+
+
+
+
 </body>
+
 </html>
