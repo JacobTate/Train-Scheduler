@@ -24,25 +24,26 @@ var currentTime = moment();
         var trainTime = $(".input3").val().trim();
         var Frequency = $(".input4").val().trim();
         var waitTime = currentTime.diff(moment(trainTime, "HH:mm"), "minutes")
-        var nextArrival;
-        
-        console.log(nextArrival);
+        var nextArrival = moment(trainTime, "HH:mm");
+        nextArrival.add(Frequency, "m")
         
         var newRow = $("<tr>").append(
             $("<td>").text(trainName),
             $("<td>").text(dest),
             $("<td>").text(Frequency),
-            $("<td>").text(),
+            $("<td>").text(nextArrival.format("HH:mm")),
             $("<td>").text(waitTime)
         )
         $(".table").append(newRow)
 
-       // database.ref().push({
-         //   Name: trainTime,
-           // Dest: dest,
-            //Time: trainTime,
-            //Frequency: Frequency
-       // })
+        database.ref().push({
+            Name: trainName,
+            Dest: dest,
+            Time: trainTime,
+            Frequency: Frequency,
+            Wait: waitTime,
+            Arrival: nextArrival.format("HH:mm")
+        })
 
         $(".input1").val("")
         $(".input2").val("")
