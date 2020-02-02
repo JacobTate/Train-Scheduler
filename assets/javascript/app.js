@@ -15,18 +15,44 @@ $(document).ready(function () {
 
     var database = firebase.database();
 
-var currentTime = moment();
+    database.ref().on("child_added", function (snapshot) {
+
+        name = snapshot.val().Name
+        dest = snapshot.val().Dest
+        trainTime = snapshot.val().Time
+        Frequency = snapshot.val().Frequency
+        nextArrival = snapshot.val().Arrival
+        waitTime = snapshot.val().Wait
+
+        var tRow = $("<tr>")
+        tRow.append(
+            $("<td>").text(name),
+            $("<td>").text(dest),
+            $("<td>").text(Frequency),
+            $("<td>").text(nextArrival),
+            $("<td>").text(waitTime)
+        )
+        $(".table").append(tRow)
+
+    });
+    var currentTime = moment();
     $("#button").on("click", function (event) {
         event.preventDefault();
-       
+
         var trainName = $(".input1").val().trim();
         var dest = $(".input2").val().trim();
         var trainTime = $(".input3").val().trim();
         var Frequency = $(".input4").val().trim();
-        var waitTime = currentTime.diff(moment(trainTime, "HH:mm"), "minutes")
+     
+        var waitTime = currentTime.diff(moment(trainTime, "HH:mm "), "minutes")
+        //waitTime = waitTime * waitTime
+       
+        console.log( Math.abs(waitTime));
+
         var nextArrival = moment(trainTime, "HH:mm");
         nextArrival.add(Frequency, "m")
-        
+        nextArrival.format("HH:mm")
+
         var newRow = $("<tr>").append(
             $("<td>").text(trainName),
             $("<td>").text(dest),
@@ -34,14 +60,15 @@ var currentTime = moment();
             $("<td>").text(nextArrival.format("HH:mm")),
             $("<td>").text(waitTime)
         )
-        $(".table").append(newRow)
+        $(".table").append(newRow);
+
 
         database.ref().push({
             Name: trainName,
             Dest: dest,
-            Time: trainTime,
+            // Time: trainTime,
             Frequency: Frequency,
-            Wait: waitTime,
+            Wait: Math.abs(waitTime),
             Arrival: nextArrival.format("HH:mm")
         })
 
