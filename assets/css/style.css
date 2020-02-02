@@ -14,3 +14,6 @@ border-color: dodgerblue;
    margin-top: 0px;
   bottom: 60px;
 }
+tr:nth-child(even) {
+    background-color: #dddddd;
+  }
