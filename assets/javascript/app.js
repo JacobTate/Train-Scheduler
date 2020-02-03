@@ -14,9 +14,9 @@ $(document).ready(function () {
     firebase.initializeApp(firebaseConfig);
 
     var database = firebase.database();
-//gets the data from firebase
+    //gets the data from firebase
     database.ref().on("child_added", function (snapshot) {
-//gets the train name
+        //gets the train name
         name = snapshot.val().Name
         //the destination
         dest = snapshot.val().Dest
@@ -26,7 +26,7 @@ $(document).ready(function () {
         nextArrival = snapshot.val().Arrival
         //the minutes to arrival
         waitTime = snapshot.val().Wait
-//creates a table row
+        //creates a table row
         var tRow = $("<tr>")
         //appends td tags to the row
         tRow.append(

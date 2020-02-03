@@ -33,12 +33,14 @@
         </div>
     </div>
 
-
+    <!--the container jumbotron-->
     <div id="tableDiv" class="jumbotron">
         <!--the blue bar at the top of the divs-->
         <nav class="navbar navbar-light bg-primary">
+            <!--the text in the blue bar-->
             <span class="navbar-brand mb-0 h1">Current Train Scheduler</span>
         </nav>
+        <!--the table-->
         <table class="table">
             <tr>
                 <td>Train Name</td>
@@ -47,46 +49,44 @@
                 <td>Next Arrival</td>
                 <td>Minutes Away</td>
             </tr>
-      
         </table>
 
     </div>
-
-
-
-
-
 
     <!--the input group-->
     <div id="formDiv" class="jumbotron">
         <!--the blue bar at the top of the divs-->
         <nav class="navbar navbar-light bg-primary">
+            <!--the text in the blue bar-->
             <span class="navbar-brand mb-0 h1">Add Train</span>
         </nav>
+        <!--the from group-->
         <form>
+            <!--the first input (train name)-->
             <div class="form-group">
                 <label for="exampleInputEmail1">Train Name</label>
                 <input type="text" class="form-control input1" aria-describedby="emailHelp">
             </div>
+            <!--the second input (Destination)-->
             <div class="form-group">
                 <label for="exampleInputPassword1">Destination</label>
                 <input type="text" class="form-control input2">
             </div>
+            <!--the thrid input (first train time)-->
             <div class="form-group">
                 <label for="exampleInputPassword1">Frist Train Time (HH:mm - military time)</label>
                 <input type="text" placeholder="HH:mm - military time" class="form-control input3">
             </div>
+            <!--the fourth input (frequency)-->
             <div class="form-group">
                 <label for="exampleInputPassword1">Frequency (min)</label>
                 <input type="text" class="form-control input4">
             </div>
+            <!--the button-->
             <button id="button" class="btn btn-primary">Add Train</button>
 
         </form>
     </div>
-
-
-
 
 </body>
 
