@@ -74,7 +74,7 @@ $(document).ready(function () {
             Dest: dest,
             //the frequency
             Frequency: Frequency,
-            //the number of minuter form current time to train time converted the positive
+            //the number of minutes form current time to train time converted to positive
             Wait: Math.abs(waitTime),
             //the next arrival time formatted
             Arrival: nextArrival.format("HH:mm")
