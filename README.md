@@ -1,6 +1,6 @@
 # Train-Scheduler
 
-# created by Jacob Tate for Homework
+# created by Jacob Tate
 
  https://jacobtate.github.io/Train-Scheduler/.
  
